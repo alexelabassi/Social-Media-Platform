@@ -1,0 +1,57 @@
+﻿.conversationsContainer {
+    display: flex;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.conversationsList {
+    flex: 1;
+    border-right: 1px solid #333333;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #1f1f1f;
+}
+
+.conversationItem {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2b2b2b;
+    transition: background-color 0.3s;
+}
+
+.conversationItem:hover {
+    background-color: #3a3a3a;
+}
+
+.conversationItem.active {
+    background-color: #444444;
+}
+
+.conversationItem p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.conversationItem small {
+    font-size: 12px;
+    color: #bbbbbb;
+}
+
+.chatPanel {
+    flex: 2;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+}
+
+.noConversationSelected {
+    text-align: center;
+    color: #888888;
+    margin-top: 50px;
+}
