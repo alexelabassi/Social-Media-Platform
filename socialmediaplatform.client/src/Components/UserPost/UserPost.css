@@ -74,7 +74,7 @@
 }
 
 .btnDisable.selected {
-    border: solid 1px rgba(243, 243, 243, 0.73); 
+    border: solid 1px var(--accentColor); 
     border-radius: 1px;
 }
 

@@ -306,9 +306,30 @@ public class UserController : ControllerBase
         return Ok(new { IsAdmin = isAdmin });
     }
 
+    // private async Task<string> GetUserData(string userId) // text posts and description
+    // {
+    //     var user = await _userManager.Users
+    //         .Include(u => u.Posts)
+    //         .FirstOrDefaultAsync(u => u.Id == userId);
+    //
+    //     if (user == null)
+    //         return null;
+    //
+    //     var textPosts = user.Posts
+    //         .Where(post => post.ContentType == "text")
+    //         .Select(post => post.Content);
+    //
+    //     var description = string.IsNullOrWhiteSpace(user.Description)
+    //         ? "No description available."
+    //         : $"This user's description is: {user.AiDescription}. \nHis posts are: ";
+    //     var combinedData = $"{description}\n{string.Join(" ", textPosts)}".Trim();
+    //
+    //     return combinedData;
+    // }
+    
+    
     private async Task<string> GetUserData(string userId) // text posts and description
     {
-        // Fetch the user and their posts with ContentType = "text"
         var user = await _userManager.Users
             .Include(u => u.Posts)
             .FirstOrDefaultAsync(u => u.Id == userId);
@@ -376,7 +397,8 @@ public class UserController : ControllerBase
             .Select(u => (u.Id, u.AiDescription))
             .ToList();
         var recommendations = await _aiService.RecommendSimilarUsersAsync(currentUser.AiDescription, descriptionsList);
-
+        
         return Ok(new { recommendations });
     }
+    
 }

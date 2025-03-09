@@ -18,6 +18,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<UserConversation> UserConversations { get; set; }
     
     public DbSet<Message> Messages { get; set; }
+    
+    public DbSet<Story> Stories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

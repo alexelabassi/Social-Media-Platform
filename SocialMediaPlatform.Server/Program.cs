@@ -43,9 +43,12 @@ builder.Services.AddScoped<CommentRepository>();
 builder.Services.AddScoped<FollowRepository>();
 builder.Services.AddScoped<ConversationRepository>();
 builder.Services.AddScoped<MessageRepository>();
+builder.Services.AddScoped<StoryRepository>();
 
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<AIService>();
+
+builder.Services.AddHostedService<StoryCleanupService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

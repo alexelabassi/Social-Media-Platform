@@ -25,4 +25,6 @@ public class ApplicationUser : IdentityUser
     public virtual ICollection<UserConversation>? UserConversations { get; set; }
     public virtual ICollection<Message>? Messages { get; set; }
 
+    public ICollection<Story> Stories { get; set; }
+
 }

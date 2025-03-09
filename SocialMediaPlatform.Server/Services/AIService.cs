@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.Extensions.Configuration;
 
 public class AIService
@@ -59,7 +60,7 @@ public class AIService
             prompt.AppendLine($"User {user.UserId}: {user.AiDescription}");
         }
 
-        prompt.AppendLine("Suggest the most similar user to the current user. Give only the id, nothing else. If none match, just answer 'NA'.");
+        prompt.AppendLine("Suggest the most similar user to the current user. Respond strictly only with the user id.");
 
         // Call OpenAI API
         var requestData = new
@@ -87,8 +88,15 @@ public class AIService
 
         var jsonResponse = await response.Content.ReadAsStringAsync();
         var responseData = JsonSerializer.Deserialize<OpenAiResponse>(jsonResponse, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+        var responseText = responseData?.Choices?.FirstOrDefault()?.Message?.Content;
+        
+        return ExtractIdFromAIResponse(responseText);
+    }
+    private string ExtractIdFromAIResponse(string aiResponse)
+    {
+        Match match = Regex.Match(aiResponse, @"\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b");
 
-        return responseData?.Choices?.FirstOrDefault()?.Message?.Content ?? "No recommendations generated.";
+        return match.Success ? match.Value : "No ID found";
     }
 }
 
