@@ -3,7 +3,7 @@
 A full-stack social media application built with **.NET, React, and PostgreSQL**, featuring posts, stories, comments, a follow system, group management, messaging, and profile customization. Integrates **OpenAI API** for AI-generated user descriptions and a recommendation system.
 
 
-## ✨ Features
+## Features
 
 - User posts with create, edit, and delete functionality  
 - Stories with time-limited visibility  
@@ -15,13 +15,13 @@ A full-stack social media application built with **.NET, React, and PostgreSQL**
 - AI-powered recommendation system (using OpenAI API) to suggest users with similar profile interests  
 - Role-based access control (RBAC) for guest, user, and admin permissions  
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend:** React, CSS  
 - **Backend:** .NET, PostgreSQL, Entity Framework, JWT Authentication  
 - **AI Integration:** OpenAI API  
 
-## 📸 Screenshots & Demos
+## Screenshots & Demos
 
 - **Home Feed:**  
   ![Home Feed](./demo/feed.png)
@@ -55,6 +55,7 @@ A full-stack social media application built with **.NET, React, and PostgreSQL**
   <p align="center">
   <img src="./demo/stories.png" width="700">
   </p>
+
 
 
 
