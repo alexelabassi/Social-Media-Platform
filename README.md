@@ -23,38 +23,39 @@ A full-stack social media application built with **.NET, React, and PostgreSQL**
 
 ## Screenshots & Demos
 
-- **Home Feed:**  
+- ### **Home Feed:**  
   ![Home Feed](./demo/feed.png)
 
-- **Post & Comments:**  
+- ### **Post & Comments:**  
 <p align="center">
   <img src="./demo/post&comments.png" width="500">
 </p>
 
-- **Edit Profile:**  
+- ### **Edit Profile:**  
   <p align="center">
   <img src="./demo/edit_profile.png" width="800">
   </p>
 
-- **AI-Generated User Descriptions & Recommandations:**  
+- ### **AI-Generated User Descriptions & Recommandations:**  
   <p align="center">
   <img src="./demo/ai_recom.png" width="900">
   </p>
 
-  - **Groups:**  
+  - ### **Groups:**  
   <p align="center">
   <img src="./demo/groups.png" width="700">
   </p>
 
-  - **Follow System:**  
+  - ### **Follow System:**  
   <p align="center">
   <img src="./demo/follow req.png" width="600">
   </p>
   
-  - **Stories Feature:**  
+  - ### **Stories Feature:**  
   <p align="center">
   <img src="./demo/stories.png" width="700">
   </p>
+
 
 
 
